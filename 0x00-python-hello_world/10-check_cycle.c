@@ -13,8 +13,8 @@ int check_cycle(listint_t *head)
 
 	if(!head)
 		return (0);
-	n1 = head;
-	n2 = head->next;
+	n2 = head;
+	n1 = head->next;
 	while (n1 && n2 && n1->next)
 	{
 		if (n2 == n1)
