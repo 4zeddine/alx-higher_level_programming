@@ -38,31 +38,31 @@ class TestBase_instantiation(unittest.TestCase):
         self.assertEqual(b1.id, b2.id - 1)
 
     def test_unique_id(self):
-        self.assertEqual(11, Base(11).id)
+        self.assertEqual(12, Base(12).id)
 
     def test_nb_instances_after_unique_id(self):
         b1 = Base()
-        b2 = Base(11)
+        b2 = Base(12)
         b3 = Base()
         self.assertEqual(b1.id, b3.id - 1)
 
     def test_id_public(self):
-        b = Base(11)
-        b.id = 14
-        self.assertEqual(14, b.id)
+        b = Base(12)
+        b.id = 15
+        self.assertEqual(15, b.id)
 
     def test_nb_instances_private(self):
         with self.assertRaises(AttributeError):
-            print(Base(11).__nb_instances)
+            print(Base(12).__nb_instances)
 
     def test_str_id(self):
         self.assertEqual("hello", Base("hello").id)
 
     def test_float_id(self):
-        self.assertEqual(6.5, Base(6.5).id)
+        self.assertEqual(5.5, Base(5.5).id)
 
     def test_complex_id(self):
-        self.assertEqual(complex(6), Base(complex(6)).id)
+        self.assertEqual(complex(5), Base(complex(5)).id)
 
     def test_dict_id(self):
         self.assertEqual({"a": 1, "b": 2}, Base({"a": 1, "b": 2}).id)
@@ -109,16 +109,16 @@ class TestBase_to_json_string(unittest.TestCase):
     """Unittests that tests to_json_string method of Base class."""
 
     def test_to_json_string_rectangle_type(self):
-        r = Rectangle(11, 8, 3, 7, 5)
+        r = Rectangle(10, 7, 2, 8, 6)
         self.assertEqual(str, type(Base.to_json_string([r.to_dictionary()])))
 
     def test_to_json_string_rectangle_one_dict(self):
-        r = Rectangle(11, 8, 3, 7, 5)
-        self.assertTrue(len(Base.to_json_string([r.to_dictionary()])) == 55)
+        r = Rectangle(10, 7, 2, 8, 6)
+        self.assertTrue(len(Base.to_json_string([r.to_dictionary()])) == 53)
 
     def test_to_json_string_rectangle_two_dicts(self):
-        r1 = Rectangle(3, 4, 5, 16, 6)
-        r2 = Rectangle(4, 5, 6, 1, 13)
+        r1 = Rectangle(2, 3, 5, 19, 2)
+        r2 = Rectangle(4, 2, 4, 1, 12)
         list_dicts = [r1.to_dictionary(), r2.to_dictionary()]
         self.assertTrue(len(Base.to_json_string(list_dicts)) == 106)
 

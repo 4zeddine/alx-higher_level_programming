@@ -426,7 +426,7 @@ class TestRectangle_order_of_initialization(unittest.TestCase):
 
 
 class TestRectangle_area(unittest.TestCase):
-    """Unittests for testing the area method of the Rectangle class."""
+    """Unittests that tests the area method of the Rectangle class."""
 
     def test_area_small(self):
         r = Rectangle(10, 2, 0, 0, 0)
@@ -453,13 +453,13 @@ class TestRectangle_stdout(unittest.TestCase):
 
     @staticmethod
     def capture_stdout(rect, method):
-        """captures and returns the text printed to stdout.
+        """Captures and returns text printed to stdout.
 
         Args:
-            rect (Rectangle): Rectangle to print to stdout.
+            rect (Rectangle): The Rectangle to print to stdout.
             method (str): The method to run on rect.
         Returns:
-            The text printed to stdout by calling method.
+            The text printed to stdout by calling method on sq.
         """
         capture = io.StringIO()
         sys.stdout = capture
@@ -784,7 +784,7 @@ class TestRectangle_update_kwargs(unittest.TestCase):
 
 
 class TestRectangle_to_dictionary(unittest.TestCase):
-    """Unittests that tests to_dictionary metthod of the Rectangle class."""
+    """Unittests that tests to_dictionary method of the Rectangle class."""
 
     def test_to_dictionary_output(self):
         r = Rectangle(10, 2, 1, 9, 5)
@@ -801,7 +801,6 @@ class TestRectangle_to_dictionary(unittest.TestCase):
         r = Rectangle(10, 2, 4, 1, 2)
         with self.assertRaises(TypeError):
             r.to_dictionary(1)
-
 
 if __name__ == "__main__":
     unittest.main()
