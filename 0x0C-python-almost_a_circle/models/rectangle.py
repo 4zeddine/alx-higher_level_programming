@@ -48,7 +48,6 @@ class Rectangle(Base):
             raise ValueError("height must be > 0")
         self.__height = value
 
-
     @property
     """get/sets the x coordinate of Rictangle"""
     def x(self):
