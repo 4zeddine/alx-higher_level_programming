@@ -7,7 +7,7 @@ Project done during **Full Stack Software Engineering studies** at **ALX SE Prog
 
 ## Files
 
-All the following files are scripts of MySQL:
+All the following files are scripts of Js:
 
 | Filename | Description |
 | -------- | ----------- |
