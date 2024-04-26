@@ -7,7 +7,7 @@ manages urllib.error.HTTPError exceptions
 and print: Error code: followed by the HTTP status code
 """
 import sys
-import urllib.request
+from urllib import request, error
 
 
 if __name__ == "__main__":
@@ -18,4 +18,4 @@ if __name__ == "__main__":
         with urllib.request.urlopen(request) as response:
             print(response.read().decode("utf-8"))
     except urllib.error.URLError as e:
-        print('Error code:{}'.format(e.code))
+        print('Error code:', e.code)
